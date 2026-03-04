@@ -2,7 +2,8 @@ class Grid {
     #cells;
     #cellSize;
 
-    constructor(cellSize) {
+    constructor(cellSize) 
+    {
         this.#cellSize = cellSize;
         this.#createEmptyGrid();
     }
@@ -10,7 +11,8 @@ class Grid {
     /**
      * Creates a 2D array with all the cells initially set to false (empty)
      */
-    #createEmptyGrid() {
+    #createEmptyGrid() 
+    {
         // if the cell size doesn't fit perfectly in the dimensions of the canvas, the last row / col will extend off the canvas
         const numRows = Math.ceil(height / this.#cellSize); 
         const numCols = Math.ceil(width / this.#cellSize);
@@ -53,9 +55,11 @@ class Grid {
      * @param {number} y 
      * @returns {boolean} True if there is an obstacle in the cell, false otherwise
      */
-    isOccupied(x, y) {
+    isOccupied(x, y) 
+    {
         // If the coordinate is out of bounds of the canvas, return true
-        if (x < 0 || x >= width || y < 0 || y >= height) {
+        if (x < 0 || x >= width || y < 0 || y >= height) 
+        {
             return true;
         }
         const row = this.#getIndexOfCoord(y);

@@ -9,7 +9,8 @@ let grid;
 
 let playerIsMoving = false;
 
-function setup() {
+function setup() 
+{
     createCanvas(400, 400);
     createWalls();
     grid = new Grid(50);
@@ -17,20 +18,29 @@ function setup() {
     player = new Player(0, 0, 30, 30, color(0, 255, 0), 3);
 }
 
-function draw() {
+function draw() 
+{
     background(255);
     drawWalls();
     player.draw();
-    // grid._showGrid();
-    if (playerIsMoving) {
-        player.moveRight();
+
+    grid._showGrid();
+    if (playerIsMoving) 
+    {
+        checkDirection();
     }
+    
+   
 }
 
-function mouseClicked() {
-    if (!playerIsMoving) {
+function mouseClicked() 
+{
+    if (!playerIsMoving) 
+    {
         playerIsMoving = true;
-    } else {
+    } 
+    else 
+    {
         playerIsMoving = false;
         // reset the player's position
         player.setX(0);
@@ -41,8 +51,10 @@ function mouseClicked() {
 /**
  * Create the walls and populate the walls array
  */
-function createWalls() {
-    walls = [
+function createWalls() 
+{
+    walls = 
+    [
         new Wall(0, 100, 100, 300),
         new Wall(100, 250, 100, 150),
         new Wall(200, 300, 200, 100),
@@ -53,8 +65,10 @@ function createWalls() {
 /**
  * Add the walls to the grid
  */
-function addWallsToGrid() {
-    for (const wall of walls) {
+function addWallsToGrid() 
+{
+    for (const wall of walls) 
+    {
         grid.addToGrid(wall);
     }
 }
@@ -62,8 +76,27 @@ function addWallsToGrid() {
 /**
  * Draw the walls
  */
-function drawWalls() {
-    for (const wall of walls) {
+function drawWalls() 
+{
+    for (const wall of walls) 
+    {
         wall.draw();
     }
+}
+
+function checkDirection()
+{
+    if (grid.isOccupied(player.getX(),player.getY()+player.getHeight()+player.getSpeed()) === false)
+    {
+        console.log("movedown")
+        player.moveDown()
+    }
+    else 
+    {
+        console.log("moveright")
+    
+        player.moveRight()
+    }
+    
+
 }

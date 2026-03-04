@@ -1,4 +1,5 @@
-class StationaryObject extends GameObject {
+class StationaryObject extends GameObject 
+{
     
     #solid;
     #colour;
@@ -33,7 +34,8 @@ class StationaryObject extends GameObject {
      * Draw the obstacle
      * @override
      */
-    draw() {
+    draw() 
+    {
         noStroke();
         fill(this.#colour);
         rect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -51,7 +53,36 @@ class Wall extends StationaryObject {
      * @param {number} w The width
      * @param {number} h The height
      */
-    constructor(x, y, w, h) {
+    constructor(x, y, w, h) 
+    {
         super(x, y, w, h, 1, color(100));
     }
+}
+
+class Treasure extends StationaryObject
+{
+    
+    #value
+
+    constructor(x,y,w,h)
+    {
+        super(x, y, w, h)
+        this.#value = floor(random(500));
+    }
+
+    getValue()
+    {
+        return(this.#value)
+    }
+
+    draw()
+    {
+        
+        fill(0)
+        rect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
+        fill(255)
+        text(this.#value,this.getX()+10,this.getY()+25)
+    }
+     
+
 }

@@ -33,7 +33,8 @@ class StationaryObject extends GameObject {
      * Draw the obstacle
      * @override
      */
-    draw() {
+    draw() 
+    {
         noStroke();
         fill(this.#colour);
         rect(this.getX(), this.getY(), this.getWidth(), this.getHeight());
@@ -41,7 +42,8 @@ class StationaryObject extends GameObject {
 }
 
 
-class Wall extends StationaryObject {
+class Wall extends StationaryObject 
+{
 
 
     /**

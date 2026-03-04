@@ -50,14 +50,17 @@ class Player extends GameObject {
     /**
      * Move the player right at the current speed
      */
-    moveRight() {
+    moveRight() 
+    {
+        
         this.setX(this.getX() + this.#speed);
     }
 
     /**
      * Move the player left at the current speed
      */
-    moveLeft() {
+    moveLeft() 
+    {
         this.setX(this.getX() - this.#speed);
     }
 
@@ -65,14 +68,16 @@ class Player extends GameObject {
     /**
      * Move the player down at the current speed
      */
-    moveDown() {
+    moveDown() 
+    {
         this.setY(this.getY() + this.#speed);
     }
 
     /**
      * Move the player up at the current speed
      */
-    moveUp() {
+    moveUp() 
+    {
         this.setY(this.getY() - this.#speed);
     }
 }

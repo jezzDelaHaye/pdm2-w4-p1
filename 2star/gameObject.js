@@ -73,7 +73,5 @@ class GameObject {
      * Throwing an exception will remind developers of child classes to 
      * implement the draw() method
      */
-    draw() {
-        throw "Method not implemented!";
-    }
+    
 }

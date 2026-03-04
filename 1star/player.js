@@ -11,7 +11,8 @@ class Player extends GameObject {
      * @param {Color} colour 
      * @param {number} speed
      */
-    constructor(x, y, w, h, colour, speed) {
+    constructor(x, y, w, h, colour, speed) 
+    {
         super(x, y, w, h);
         this.#colour = colour;
         this.#speed = speed;
