@@ -36,23 +36,23 @@ function tryMovePlayer() {
     switch(key) {
         case "w":
         case "W": 
-            player.moveUp();
+            if (grid.isOccupied(player.getX()+player.getWidth(),player.getY()-player.getSpeed())){}
+            else{player.moveUp();}
             break;
         case "a":
         case "A":
-            player.moveLeft();
+            if (grid.isOccupied(player.getX()-player.getSpeed(),player.getY())){}
+            else{player.moveLeft();}
             break;
         case "s":
         case "S":
-            if (grid.isOccupied(player.getX(),player.getY()+player.getHeight()+player.getSpeed()))
-            {}
-            else
-            {player.moveDown();}
-            
+            if (grid.isOccupied(player.getX(),player.getY()+player.getHeight()+player.getSpeed())){}
+            else{player.moveDown();} 
             break;
         case "d":
         case "D":
-            player.moveRight();
+            if (grid.isOccupied(player.getX()+player.getWidth()+player.getSpeed(),player.getY())){}
+            else{player.moveRight();}
             break;
     }
 }
